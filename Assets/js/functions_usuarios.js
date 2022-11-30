@@ -14,38 +14,38 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns":[
-            {"data":"idpersona"},
-            {"data":"nombres"},
-            {"data":"apellidos"},
-            {"data":"email_user"},
-            {"data":"telefono"},
-            {"data":"nombrerol"},
-            {"data":"status"},
-            {"data":"options"}
+        {"data":"idpersona"},
+        {"data":"nombres"},
+        {"data":"apellidos"},
+        {"data":"email_user"},
+        {"data":"telefono"},
+        {"data":"nombrerol"},
+        {"data":"status"},
+        {"data":"options"}
         ],
         'dom': 'lBfrtip',
         'buttons': [
-            {
-                "extend": "copyHtml5",
-                "text": "<i class='fa fa-copy'></i> Copiar",
-                "titleAttr":"Copiar",
-                "className": "btn btn-secondary btn-sm"
-            },{
-                "extend": "excelHtml5",
-                "text": "<i class='fa fa-file-excel-o'></i> Excel",
-                "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success btn-sm"
-            },{
-                "extend": "pdfHtml5",
-                "text": "<i class='fa fa-file-pdf-o'></i> PDF",
-                "titleAttr":"Esportar a PDF",
-                "className": "btn btn-danger btn-sm"
-            },{
-                "extend": "csvHtml5",
-                "text": "<i class='fa fa-copy'></i> CSV",
-                "titleAttr":"Esportar a CSV",
-                "className": "btn btn-info btn-sm"
-            }
+        {
+            "extend": "copyHtml5",
+            "text": "<i class='fa fa-copy'></i> Copiar",
+            "titleAttr":"Copiar",
+            "className": "btn btn-secondary btn-sm"
+        },{
+            "extend": "excelHtml5",
+            "text": "<i class='fa fa-file-excel-o'></i> Excel",
+            "titleAttr":"Esportar a Excel",
+            "className": "btn btn-success btn-sm"
+        },{
+            "extend": "pdfHtml5",
+            "text": "<i class='fa fa-file-pdf-o'></i> PDF",
+            "titleAttr":"Esportar a PDF",
+            "className": "btn btn-danger btn-sm"
+        },{
+            "extend": "csvHtml5",
+            "text": "<i class='fa fa-copy'></i> CSV",
+            "titleAttr":"Esportar a CSV",
+            "className": "btn btn-info btn-sm"
+        }
         ],
         "resonsieve":"true",
         "bDestroy": true,
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function(){
             let strNit = document.querySelector('#txtNit').value;
             let strNombreFiscal = document.querySelector('#txtNombreFiscal').value;
             let strDirFiscal = document.querySelector('#txtDirFiscal').value;
-           
+            
             if(strNit == '' || strNombreFiscal == '' || strDirFiscal == '' )
             {
                 swal("Atención", "Todos los campos son obligatorios." , "error");
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 window.addEventListener('load', function() {
-        fntRolesUsuario();
+    fntRolesUsuario();
 }, false);
 
 function fntRolesUsuario(){
@@ -266,24 +266,24 @@ function fntViewUsuario(idpersona){
 
             if(objData.status)
             {
-               let estadoUsuario = objData.data.status == 1 ? 
-                '<span class="badge badge-success">Activo</span>' : 
-                '<span class="badge badge-danger">Inactivo</span>';
+             let estadoUsuario = objData.data.status == 1 ? 
+             '<span class="badge badge-success">Activo</span>' : 
+             '<span class="badge badge-danger">Inactivo</span>';
 
-                document.querySelector("#celIdentificacion").innerHTML = objData.data.identificacion;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombres;
-                document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
-                document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celEmail").innerHTML = objData.data.email_user;
-                document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombrerol;
-                document.querySelector("#celEstado").innerHTML = estadoUsuario;
-                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
-                $('#modalViewUser').modal('show');
-            }else{
-                swal("Error", objData.msg , "error");
-            }
+             document.querySelector("#celIdentificacion").innerHTML = objData.data.identificacion;
+             document.querySelector("#celNombre").innerHTML = objData.data.nombres;
+             document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
+             document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
+             document.querySelector("#celEmail").innerHTML = objData.data.email_user;
+             document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombrerol;
+             document.querySelector("#celEstado").innerHTML = estadoUsuario;
+             document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
+             $('#modalViewUser').modal('show');
+         }else{
+            swal("Error", objData.msg , "error");
         }
     }
+}
 }
 
 function fntEditUsuario(element,idpersona){
@@ -320,7 +320,7 @@ function fntEditUsuario(element,idpersona){
                 $('#listStatus').selectpicker('render');
             }
         }
-    
+        
         $('#modalFormUsuario').modal('show');
     }
 }
@@ -330,11 +330,11 @@ function fntDelUsuario(idpersona){
         title: "Eliminar Usuario",
         text: "¿Realmente quiere eliminar el Usuario?",
         type: "warning",
-showCancelButton: true,
-cancelButtonText: "Mmm... mejor no",
-confirmButtonColor: "#DD6B55",
-confirmButtonText: "¡Adelante!",
-closeOnConfirm: false 
+        showCancelButton: true,
+        cancelButtonText: "Mmm... mejor no",
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "¡Adelante!",
+        closeOnConfirm: false 
     }, function(isConfirm) {
         
         if (isConfirm) 

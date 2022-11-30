@@ -11,15 +11,7 @@
   <div class="modal-body">
     <form id="formProductos" name="formProductos" class="form-horizontal">
       <input type="hidden" id="idProducto" name="idProducto" value="">
-      <div class="alert alert-info d-flex align-items-center" role="alert">
-<!--         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
-            <use xlink:href="#info-fill"></use>
-        </svg> -->
-        <div class="ml-2">
-         <span class="fa fa-exclamation"></span>   Todo los campos con <span class="text-danger fw-bold">*</span> son obligatorios.
-        </div>
-    </div>
-    <!--        <p class="text-primary">Los campos con asterisco (<span class="required">*</span>) son obligatorios.</p> -->
+           <p class="text-primary">Los campos con asterisco (<span class="required">*</span>) son obligatorios.</p>
     <div class="row">
         <div class="col-md-8">
             <div class="form-group">
@@ -41,28 +33,28 @@
                 <div id="printCode">
                     <svg id="barcode"></svg> 
                 </div>
-                <button class="btn btn-success btn-sm" type="button" onClick="fntPrintBarcode('#printCode')"><i class="fas fa-print"></i> Imprimir</button>
+                <button class="btn btn-success btn-sm" type="button" onClick="fntPrintBarcode('#printCode')"><i class="fa fa-print"></i> Imprimir</button>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="control-label">Precio <span class="required">*</span></label>
-                <input class="form-control" id="txtPrecio" name="txtPrecio" type="text" required="">
+                <input class="form-control" id="txtPrecio" name="txtPrecio" type="text" required="required">
             </div>
             <div class="form-group col-md-6">
                 <label class="control-label">Stock <span class="required">*</span></label>
-                <input class="form-control" id="txtStock" name="txtStock" type="text" required="">
+                <input class="form-control" id="txtStock" name="txtStock" type="text" required="required">
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="listCategoria">Categoría <span class="required">*</span></label>
-                <select class="form-control" data-live-search="true" id="listCategoria" name="listCategoria" required=""></select>
+                <select class="form-control" data-live-search="true" id="listCategoria" name="listCategoria" required="required"></select>
             </div>
             <div class="form-group col-md-6">
                 <label for="listStatus">Estado <span class="required">*</span></label>
-                <select class="form-control selectpicker" id="listStatus" name="listStatus" required="">
+                <select class="form-control selectpicker" id="listStatus" name="listStatus" required="required">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
               </select>

@@ -136,10 +136,10 @@ function fntDelRol(idrol){
         text: "¿Realmente quiere eliminar el Rol?",
         type: "warning",
         showCancelButton: true,
-        confirmButtonText: "Si, eliminar!",
-        cancelButtonText: "No, cancelar!",
-        closeOnConfirm: false,
-        closeOnCancel: true
+        cancelButtonText: "Mmm... mejor no",
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "¡Adelante!",
+        closeOnConfirm: false 
     }, function(isConfirm) {
         
         if (isConfirm) 

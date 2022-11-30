@@ -24,24 +24,24 @@ document.addEventListener('DOMContentLoaded', function(){
         'buttons': [
             {
                 "extend": "copyHtml5",
-                "text": "<i class='far fa-copy'></i> Copiar",
+                "text": "<i class='fa fa-copy'></i> Copiar",
                 "titleAttr":"Copiar",
-                "className": "btn btn-secondary"
+                "className": "btn btn-secondary btn-sm"
             },{
                 "extend": "excelHtml5",
-                "text": "<i class='fas fa-file-excel'></i> Excel",
+                "text": "<i class='fa fa-file-excel-o'></i> Excel",
                 "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success"
+                "className": "btn btn-success btn-sm"
             },{
                 "extend": "pdfHtml5",
-                "text": "<i class='fas fa-file-pdf'></i> PDF",
+                "text": "<i class='fa fa-file-pdf-o'></i> PDF",
                 "titleAttr":"Esportar a PDF",
-                "className": "btn btn-danger"
+                "className": "btn btn-danger btn-sm"
             },{
                 "extend": "csvHtml5",
-                "text": "<i class='fas fa-file-csv'></i> CSV",
+                "text": "<i class='fa fa-copy'></i> CSV",
                 "titleAttr":"Esportar a CSV",
-                "className": "btn btn-info"
+                "className": "btn btn-info btn-sm"
             }
         ],
         "resonsieve":"true",
@@ -227,10 +227,10 @@ function fntDelInfo(idcategoria){
         text: "¿Realmente quiere eliminar al categoría?",
         type: "warning",
         showCancelButton: true,
-        confirmButtonText: "Si, eliminar!",
-        cancelButtonText: "No, cancelar!",
-        closeOnConfirm: false,
-        closeOnCancel: true
+        cancelButtonText: "Mmm... mejor no",
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "¡Adelante!",
+        closeOnConfirm: false 
     }, function(isConfirm) {
         
         if (isConfirm) 
