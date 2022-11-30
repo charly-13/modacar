@@ -1,5 +1,9 @@
 <?php 
-
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    require 'Libraries/phpmailer/Exception.php';
+    require 'Libraries/phpmailer/PHPMailer.php';
+    require 'Libraries/phpmailer/SMTP.php';
 	//Retorla la url del proyecto
 	function base_url()
 	{
@@ -50,6 +54,50 @@
         $send = mail($emailDestino, $asunto, $mensaje, $de);
         return $send;
     }
+
+
+            function sendMailLocal($data,$template){
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+        ob_start();
+        require_once("Views/Template/Email/".$template.".php");
+        $mensaje = ob_get_clean();
+
+        // try {
+            //Server settings
+            $mail->SMTPDebug = 1;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = 'modacar13@gmail.com';                     //SMTP username
+            $mail->Password   = 'jifdvkfydnjoxzjb';                               //SMTP password
+            $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom('carlos.cruz@fortalezac.com', 'MODA CAR');
+            $mail->addAddress($data['email']);     //Add a recipient
+            if(!empty($data['emailCopia'])){
+                $mail->addBCC($data['emailCopia']);
+            }
+
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = utf8_decode($data['asunto']);
+            $mail->Body    = $mensaje;
+            
+            $mail->send();
+            // echo 'Mensaje enviado';
+        // } catch (Exception $e) {
+        //     echo "Error en el envío del mensaje: {$mail->ErrorInfo}";
+        // }
+    }
+
+
+
+
+
+
 
     function getPermisos(int $idmodulo){
         require_once ("Models/PermisosModel.php");

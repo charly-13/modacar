@@ -22,7 +22,7 @@
 			$data['page_id'] = 3;
 			$data['page_tag'] = "Roles Usuario";
 			$data['page_name'] = "rol_usuario";
-			$data['page_title'] = "Roles Usuario <small> Tienda Virtual</small>";
+			$data['page_title'] = "Roles Usuario <small> Online Shop</small>";
 			$data['page_functions_js'] = "functions_roles.js";
 			$this->views->getView($this,"roles",$data);
 		}
@@ -35,7 +35,7 @@
 				$btnDelete = '';
 				$arrData = $this->model->selectRoles();
 
-				for ($i=0; $i < count($arrData); $i++) {
+				for ($i=0; $i < count($arrData); $i++) { 
 
 					if($arrData[$i]['status'] == 1)
 					{
@@ -45,11 +45,11 @@
 					}
 
 					if($_SESSION['permisosMod']['u']){
-						$btnView = '<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['idrol'].')" title="Permisos"><i class="fas fa-key"></i></button>';
-						$btnEdit = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol('.$arrData[$i]['idrol'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+						$btnView = '<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos('.$arrData[$i]['idrol'].')" title="Permisos"><i class="fa fa-key"></i></button>';
+						$btnEdit = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol('.$arrData[$i]['idrol'].')" title="Editar"><i class="fa fa-pencil"></i></button>';
 					}
 					if($_SESSION['permisosMod']['d']){
-						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idrol'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
+						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idrol'].')" title="Eliminar"><i class="fa fa-trash"></i></button>
 					</div>';
 					}
 					$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';

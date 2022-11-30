@@ -2,28 +2,42 @@
     headerAdmin($data); 
     getModal('modalProductos',$data);
 ?>
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-            <h1><i class="fas fa-box"></i> <?= $data['page_title'] ?>
-              <?php if($_SESSION['permisosMod']['w']){ ?>
-                <button class="btn btn-primary" type="button" onclick="openModal();" ><i class="fas fa-plus-circle"></i> Nuevo</button>
-              <?php } ?> 
-            </h1>
-        </div>
-        <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/productos"><?= $data['page_title'] ?></a></li>
-        </ul>
-      </div>
-        <div class="row">
-            <div class="col-md-12">
-              <div class="tile">
-                <div class="tile-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover table-bordered" id="tableProductos">
-                      <thead>
-                        <tr>
+        <!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title"> 
+<!--       <div class="title_left">
+        <h3>Users <small>Some examples to get you started</small></h3>
+      </div> -->
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2><?= $data['page_title'] ?> </h2>
+            &nbsp; &nbsp; &nbsp;
+            <?php if($_SESSION['permisosMod']['w']){ ?>
+              <button class="btn btn-info btn-sm" type="button" onclick="openModal();" ><i class="fas fa fa-plus-circle"></i> Nuevo</button>
+            <?php } ?>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card-box table-responsive">
+<!--                   <p class="text-muted font-13 m-b-30">
+                    The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.
+                  </p> -->
+                  <table id="tableProductos" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                      <tr>
                           <th>ID</th>
                           <th>Código</th>
                           <th>Nombre</th>
@@ -31,16 +45,20 @@
                           <th>Precio</th>
                           <th>Estado</th>
                           <th>Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      </tbody>
-                    </table>
-                  </div>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
 <?php footerAdmin($data); ?>
     

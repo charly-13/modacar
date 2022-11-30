@@ -23,7 +23,7 @@
 	//Datos envio de correo
 	const NOMBRE_REMITENTE = "online shop";
 	const EMAIL_REMITENTE = "webmaster.ccc@hotmail.com";
-	const NOMBRE_EMPESA = "online shop";
+	const NOMBRE_EMPESA = "MODA - CAR";
 	const WEB_EMPRESA = "www.charlys.com";
 	
 

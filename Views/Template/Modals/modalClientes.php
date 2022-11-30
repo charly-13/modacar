@@ -11,8 +11,20 @@
       <div class="modal-body">
             <form id="formCliente" name="formCliente" class="form-horizontal">
               <input type="hidden" id="idUsuario" name="idUsuario" value="">
-              <p class="text-primary">Los campos con asterisco (<span class="required">*</span>) son obligatorios.</p>
 
+              <div class="alert alert-info d-flex align-items-center" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                            <use xlink:href="#info-fill"></use>
+                        </svg>
+                        <div class="ml-2">
+                            Todo los campos con <span class="text-danger fw-bold">*</span> son obligatorios.
+                        </div>
+                    </div>
+
+
+
+             <!--  <p class="text-primary">Los campos con asterisco (<span class="required">*</span>) son obligatorios.</p>
+ -->
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="txtIdentificacion">Identificación <span class="required">*</span></label>
@@ -62,10 +74,12 @@
              <div class="form-row">
                 
              </div>
-              <div class="tile-footer">
+              <div class="modal-footer">
                 <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
               </div>
+
+
             </form>
       </div>
     </div>

@@ -19,7 +19,7 @@ tableProductos = $('#tableProductos').dataTable( {
     "columns":[
         {"data":"idproducto"},
         {"data":"codigo"},
-        {"data":"nombre"},
+        {"data":"nombre"}, 
         {"data":"stock"},
         {"data":"precio"},
         {"data":"status"},
@@ -34,33 +34,33 @@ tableProductos = $('#tableProductos').dataTable( {
     'buttons': [
         {
             "extend": "copyHtml5",
-            "text": "<i class='far fa-copy'></i> Copiar",
+            "text": "<i class='fa fa-copy'></i> Copiar",
             "titleAttr":"Copiar",
-            "className": "btn btn-secondary",
+            "className": "btn btn-secondary btn-sm",
             "exportOptions": { 
                 "columns": [ 0, 1, 2, 3, 4, 5] 
             }
         },{
             "extend": "excelHtml5",
-            "text": "<i class='fas fa-file-excel'></i> Excel",
+            "text": "<i class='fa fa-file-excel-o'></i> Excel",
             "titleAttr":"Esportar a Excel",
-            "className": "btn btn-success",
+            "className": "btn btn-success btn-sm",
             "exportOptions": { 
                 "columns": [ 0, 1, 2, 3, 4, 5] 
             }
         },{
             "extend": "pdfHtml5",
-            "text": "<i class='fas fa-file-pdf'></i> PDF",
+            "text": "<i class='fa fa-file-pdf-o'></i> PDF",
             "titleAttr":"Esportar a PDF",
-            "className": "btn btn-danger",
+            "className": "btn btn-danger btn-sm",
             "exportOptions": { 
                 "columns": [ 0, 1, 2, 3, 4, 5] 
             }
         },{
             "extend": "csvHtml5",
-            "text": "<i class='fas fa-file-csv'></i> CSV",
+            "text": "<i class='fa fa-copy'></i> CSV",
             "titleAttr":"Esportar a CSV",
-            "className": "btn btn-info",
+            "className": "btn btn-info btn-sm",
             "exportOptions": { 
                 "columns": [ 0, 1, 2, 3, 4, 5] 
             }
