@@ -1,35 +1,38 @@
-<?php 
-	
-	//define("BASE_URL", "http://localhost/tienda_virtual/");
+	<?php 
+
+		//define("BASE_URL", "http://localhost/tienda_virtual/");
 	const BASE_URL = "http://modacar.com.mx";
 
-	//Zona horaria
+		//Zona horaria
 	date_default_timezone_set('America/Mexico_City');
 
-	//Datos de conexión a Base de Datos
+		//Datos de conexión a Base de Datos
 	const DB_HOST = "localhost";
 	const DB_NAME = "bd_modacar";
 	const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
 
-	//Deliminadores decimal y millar Ej. 24,1989.00
+		//Deliminadores decimal y millar Ej. 24,1989.00
 	const SPD = ".";
 	const SPM = ",";
 
-	//Simbolo de moneda
+		//Simbolo de moneda
 	const SMONEY = "$";
 
-	//Datos envio de correo
+		//Datos envio de correo
 	const NOMBRE_REMITENTE = "online shop";
 	const EMAIL_REMITENTE = "webmaster.ccc@hotmail.com";
-	const NOMBRE_EMPESA = "MODA - CAR";
+	const NOMBRE_EMPESA = "Moda - Car";
 	const WEB_EMPRESA = "www.charlys.com";
-	
+
+	const CAT_SLIDER = "1,2,3";
+	const CAT_BANNER = "4,5,6";
 
 
 
-	
 
 
- ?>
+
+
+	?>
