@@ -3,7 +3,10 @@
 <?php 
 headerTienda($data);
 getModal('modalCarrito',$data);
-
+$arrSlider = $data['slider'];
+// dep($arrSlider);
+$arrBanner = $data['banner'];
+// dep($arrBanner);
 ?>
 <main id="MainContent" class="content-for-layout">
     <!-- slideshow start -->
@@ -22,29 +25,35 @@ getModal('modalCarrito',$data);
             }
             ]
         }'>
-        <div class="slide-item slide-item-bag position-relative">
-            <img class="slide-img d-none d-md-block" src="<?= media() ?>/tienda/img/slideshow/b1.jpg" alt="slide-1">
-            <img class="slide-img d-md-none" src="<?= media() ?>/tienda/img/slideshow/b1-m.jpg" alt="slide-1">
-            <div class="content-absolute content-slide">
-                <div class="container height-inherit d-flex align-items-center justify-content-end">
-                    <div class="content-box slide-content py-4">
-                        <p class="slide-text heading_24 animate__animated animate__fadeInUp"
+
+        <?php 
+        for ($i=0; $i < count($arrSlider) ; $i++) { 
+            $ruta = $arrSlider[$i]['ruta'];
+            ?>
+            <div class="slide-item slide-item-bag position-relative">
+                <img class="slide-img d-none d-md-block" src="<?= $arrSlider[$i]['portada'] ?>" alt="slide-1">
+                <!-- <img class="slide-img d-md-none" src="<?= $arrSlider[$i]['portada'] ?>" alt="slide-1"> -->
+                <img class="slide-img d-md-none" src="<?= media() ?>/tienda/img/slideshow/b2-m.jpg" alt="slide-2">
+                <div class="content-absolute content-slide">
+                    <div class="container height-inherit d-flex align-items-center justify-content-end">
+                        <div class="content-box slide-content py-4">
+                            <p class="slide-text heading_24 animate__animated animate__fadeInUp"
+                            data-animation="animate__animated animate__fadeInUp">
+                            <?= $arrSlider[$i]['nombre'] ?>
+                        </p>
+                        <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
                         data-animation="animate__animated animate__fadeInUp">
-                        Top Branded
-                    </p>
-                    <h2 class="slide-heading heading_72 animate__animated animate__fadeInUp"
-                    data-animation="animate__animated animate__fadeInUp">
-                    Best Bags 2022
-                </h2>
-                <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                href="collection-left-sidebar.html"
-                data-animation="animate__animated animate__fadeInUp">SHOP
-            NOW</a>
+                        <?= $arrSlider[$i]['descripcion'] ?>
+                    </h2>
+                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
+                    href="collection-left-sidebar.html"
+                    data-animation="animate__animated animate__fadeInUp">Ver productos</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<div class="slide-item position-relative">
+<?php } ?>
+<!-- <div class="slide-item position-relative">
     <img class="slide-img d-none d-md-block" src="<?= media() ?>/tienda/img/slideshow/b2.jpg" alt="slide-2">
     <img class="slide-img d-md-none" src="<?= media() ?>/tienda/img/slideshow/b2-m.jpg" alt="slide-2">
     <div class="content-absolute content-slide">
@@ -65,8 +74,8 @@ getModal('modalCarrito',$data);
 </div>
 </div>
 </div>
-</div>
-<div class="slide-item position-relative">
+</div> -->
+<!-- <div class="slide-item position-relative">
     <img class="slide-img d-none d-md-block" src="<?= media() ?>/tienda/img/slideshow/b3.jpg" alt="slide-3">
     <img class="slide-img d-md-none" src="<?= media() ?>/tienda/img/slideshow/b3-m.jpg" alt="slide-3">
     <div class="content-absolute content-slide">
@@ -87,7 +96,7 @@ getModal('modalCarrito',$data);
 </div>
 </div>
 </div>
-</div>
+</div> -->
 </div>
 <div class="activate-arrows"></div>
 <div class="activate-dots dot-tools"></div>
@@ -136,7 +145,7 @@ getModal('modalCarrito',$data);
     <div class="collection-tab-inner">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-heading">Popular Products</h2>
+                <h2 class="section-heading">productos populares</h2>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-duration="700">
@@ -430,79 +439,90 @@ getModal('modalCarrito',$data);
     <div class="collection-tab-inner">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-heading">Shop By Category</h2>
+                <h2 class="section-heading">Compra por categoría</h2>
             </div>
             <div class="grid-container shop-category-inner">
-                <a class="grid-item grid-item-1 position-relative rounded mt-0 d-flex" href="collection-left-sidebar.html">
-                    <img class="banner-img" src="<?= media() ?>/tienda/img/banner/bag-3.jpg" alt="banner-1">
+                <?php   for ($i=0; $i < count($arrBanner) ; $i++) { 
+                  // $ruta = $arrSlider[$i]['ruta'];
+                    ?>
+
+                    <?php if($arrBanner[$i]['idcategoria']==4){ ?>
+
+                <a class="grid-item grid-item-1 position-relative rounded mt-0 d-flex" href="<?= base_url().'/tienda/categoria/'.$arrBanner[$i]['idcategoria'].'/'.$ruta; ?>">
+                    <img class="banner-img" src="<?= $arrBanner[$i]['portada'] ?>" alt="<?= $arrBanner[$i]['nombre'] ?>" style="width: 1429px;height:1000px">
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                <h2 class="heading_18">Women Beautiful Handbag</h2>
-                                <span class="text_12 mt-2 link-underline d-block">SHOP
-                                    COLLECTION
+                                <p class="heading_16 m-0 primary-color"><?= $arrBanner[$i]['descripcion'] ?></p>
+                                <h2 class="heading_18"><?= $arrBanner[$i]['nombre'] ?></h2>
+                                <span class="text_12 mt-2 link-underline d-block">COMPRAR
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
-                <a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="collection-left-sidebar.html">
-                    <img class="banner-img" src="<?= media() ?>/tienda/img/banner/bag-4.jpg" alt="banner-1">
+            <?php } ?>
+             <?php if($arrBanner[$i]['idcategoria']==5){ ?>
+                <a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="<?= base_url().'/tienda/categoria/'.$arrBanner[$i]['idcategoria'].'/'.$ruta; ?>">
+                    <img class="banner-img" src="<?= $arrBanner[$i]['portada'] ?>" alt="<?= $arrBanner[$i]['nombre'] ?>">
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                <h2 class="heading_18">Bag Bouquet</h2>
-                                <span class="text_12 mt-2 link-underline d-block">SHOP
-                                    COLLECTION
+                                <p class="heading_16 m-0 primary-color"><?= $arrBanner[$i]['descripcion'] ?></p>
+                                <h2 class="heading_18"><?= $arrBanner[$i]['nombre'] ?></h2>
+                                <span class="text_12 mt-2 link-underline d-block">Ver
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
-                <a class="grid-item grid-item-3 position-relative rounded mt-0 d-flex" href="collection-left-sidebar.html">
-                    <img class="banner-img" src="<?= media() ?>/tienda/img/banner/bag-5.jpg" alt="banner-1">
+                     <?php } ?>
+                     <?php if($arrBanner[$i]['idcategoria']==6){ ?>
+                <a class="grid-item grid-item-3 position-relative rounded mt-0 d-flex" href="<?= base_url().'/tienda/categoria/'.$arrBanner[$i]['idcategoria'].'/'.$ruta; ?>">
+                    <img class="banner-img" src="<?= $arrBanner[$i]['portada'] ?>" alt="<?= $arrBanner[$i]['nombre'] ?>">
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex justify-content-end text-end">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_16 m-0 primary-color">Quality Product</p>
-                                <h2 class="heading_18">Leather collection</h2>
-                                <span class="text_12 mt-2 link-underline d-block">SHOP
-                                    COLLECTION
+                                <p class="heading_16 m-0 primary-color"><?= $arrBanner[$i]['descripcion'] ?></p>
+                                <h2 class="heading_18"><?= $arrBanner[$i]['nombre'] ?></h2>
+                                <span class="text_12 mt-2 link-underline d-block">Comprar colección
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
-                <a class="grid-item grid-item-4 position-relative rounded mt-0 d-flex" href="collection-left-sidebar.html">
-                    <img class="banner-img" src="<?= media() ?>/tienda/img/banner/bag-6.jpg" alt="banner-1">
+                      <?php } ?>
+                          <?php if($arrBanner[$i]['idcategoria']==7){ ?>
+                <a class="grid-item grid-item-4 position-relative rounded mt-0 d-flex" href="<?= base_url().'/tienda/categoria/'.$arrBanner[$i]['idcategoria'].'/'.$ruta; ?>">
+                    <img class="banner-img" src="<?= $arrBanner[$i]['portada'] ?>" alt="<?= $arrBanner[$i]['nombre'] ?>">
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                <h2 class="heading_18">Office Carrier</h2>
-                                <span class="text_12 mt-2 link-underline d-block">SHOP
-                                    COLLECTION
+                                <p class="heading_16 m-0 primary-color"><?= $arrBanner[$i]['descripcion'] ?></p>
+                                <h2 class="heading_18"><?= $arrBanner[$i]['nombre'] ?></h2>
+                                <span class="text_12 mt-2 link-underline d-block">Comprar colección
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
-                <a class="grid-item grid-item-5 position-relative rounded mt-0 d-flex" href="collection-left-sidebar.html">
-                    <img class="banner-img" src="<?= media() ?>/tienda/img/banner/bag-7.jpg" alt="banner-1">
+                <?php } ?>
+                 <?php if($arrBanner[$i]['idcategoria']==8){ ?>
+                <a class="grid-item grid-item-5 position-relative rounded mt-0 d-flex" href="<?= base_url().'/tienda/categoria/'.$arrBanner[$i]['idcategoria'].'/'.$ruta; ?>">
+                    <img class="banner-img" src="<?= $arrBanner[$i]['portada'] ?>" alt="<?= $arrBanner[$i]['nombre'] ?>">
                     <div class="content-absolute content-slide">
                         <div class="container height-inherit d-flex">
                             <div class="content-box banner-content p-4">
-                                <p class="heading_16 m-0 primary-color">New Arrivals</p>
-                                <h2 class="heading_18">Travel The World</h2>
-                                <span class="text_12 mt-2 link-underline d-block">SHOP
-                                    COLLECTION
+                                <p class="heading_16 m-0 primary-color"><?= $arrBanner[$i]['descripcion'] ?></p>
+                                <h2 class="heading_18"><?= $arrBanner[$i]['nombre'] ?></h2>
+                                <span class="text_12 mt-2 link-underline d-block">Comprar colección
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
+                 <?php } ?>
+            <?php } ?>
             </div>
         </div>
     </div>

@@ -1,8 +1,7 @@
 <!doctype html>
     <html lang="en" class="no-js">
-
     <head>
-        <title>Bisum - eCommerce Bootstrap 5 Template</title>
+        <title><?= $data['page_tag']?></title>
         <!-- meta tags -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,68 +88,22 @@
                         <div class="col-lg-3 d-lg-block d-none">
                             <div class="announcement-meta-wrapper d-flex align-items-center justify-content-end">
                                 <div class="announcement-meta d-flex align-items-center">
-                                    <a class="announcement-login announcement-text text-white" href="login.html">
+                                    <a class="announcement-login announcement-text text-white" href="<?= base_url() ?>/login">
                                         <svg class="icon icon-user" width="10" height="11" viewBox="0 0 10 11" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                         d="M5 0C3.07227 0 1.5 1.57227 1.5 3.5C1.5 4.70508 2.11523 5.77539 3.04688 6.40625C1.26367 7.17188 0 8.94141 0 11H1C1 8.78516 2.78516 7 5 7C7.21484 7 9 8.78516 9 11H10C10 8.94141 8.73633 7.17188 6.95312 6.40625C7.88477 5.77539 8.5 4.70508 8.5 3.5C8.5 1.57227 6.92773 0 5 0ZM5 1C6.38672 1 7.5 2.11328 7.5 3.5C7.5 4.88672 6.38672 6 5 6C3.61328 6 2.5 4.88672 2.5 3.5C2.5 2.11328 3.61328 1 5 1Z"
                                         fill="#fff" />
                                     </svg>
-                                    <span>Login</span>
+                                    <span>Iniciar Sesión</span>
                                 </a>
-                                <span class="separator-login d-flex px-3">
+      <!--                           <span class="separator-login d-flex px-3">
                                     <svg width="2" height="9" viewBox="0 0 2 9" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M1 0.5V8.5" stroke="#FEFEFE" stroke-linecap="round" />
                                 </svg>
-                            </span>
-                            <div class="currency-wrapper">
-                                <button type="button" class="currency-btn btn-reset text-white"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="flag" src="<?= media() ?>/tienda/img/flag/usd.jpg" alt="img">
-                                <span>USD</span>
-                                <span>
-                                    <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff"
-                                    stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </span>
-                        </button>
+                            </span> -->
 
-                        <ul class="currency-list dropdown-menu dropdown-menu-end px-2">
-                            <li class="currency-list-item ">
-                                <a class="currency-list-option" href="#" data-value="USD">
-                                    <img class="flag" src="<?= media() ?>/tienda/img/flag/usd.jpg" alt="img">
-                                    <span>USD</span>
-                                </a>
-                            </li>
-                            <li class="currency-list-item ">
-                                <a class="currency-list-option" href="#" data-value="CAD">
-                                    <img class="flag" src="<?= media() ?>/tienda/img/flag/cad.jpg" alt="img">
-                                    <span>CAD</span>
-                                </a>
-                            </li>
-                            <li class="currency-list-item ">
-                                <a class="currency-list-option" href="#" data-value="EUR">
-                                    <img class="flag" src="<?= media() ?>/tienda/img/flag/eur.jpg" alt="img">
-                                    <span>EUR</span>
-                                </a>
-                            </li>
-                            <li class="currency-list-item ">
-                                <a class="currency-list-option" href="#" data-value="JPY">
-                                    <img class="flag" src="<?= media() ?>/tienda/img/flag/jpy.jpg" alt="img">
-                                    <span>JPY</span>
-                                </a>
-                            </li>
-                            <li class="currency-list-item ">
-                                <a class="currency-list-option" href="#" data-value="GBP">
-                                    <img class="flag" src="<?= media() ?>/tienda/img/flag/gbp.jpg" alt="img">
-                                    <span>GBP</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -166,7 +119,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-4 col-4">
                     <div class="header-logo">
-                        <a href="index-bag.html" class="logo-main">
+                        <a href="<?= base_url() ?>" class="logo-main">
                             <img src="<?= media() ?>/tienda/img/logo.png" loading="lazy" alt="bisum">
                         </a>
                     </div>
@@ -211,7 +164,7 @@
                         <li class="menu-list-item nav-item has-megamenu">
                             <div class="mega-menu-header">
                                 <a class="nav-link" href="collection-left-sidebar.html">
-                                    Shop
+                                    Comercio
                                 </a>
                                 <span class="open-submenu">
                                     <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +334,7 @@
 <li class="menu-list-item nav-item has-dropdown">
     <div class="mega-menu-header">
         <a class="nav-link" href="about-us.html">
-            Pages
+            Páginas
         </a>
         <span class="open-submenu">
             <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg"
@@ -395,20 +348,19 @@
 <div class="submenu-transform submenu-transform-desktop">
     <ul class="submenu list-unstyled">
         <li class="menu-list-item nav-item-sub">
-            <a class="nav-link-sub nav-text-sub" href="about-us.html">About
-            Us</a>
+            <a class="nav-link-sub nav-text-sub" href="about-us.html">Sobre nosotros</a>
         </li>
         <li class="menu-list-item nav-item-sub">
-            <a class="nav-link-sub nav-text-sub" href="contact.html">Contact</a>
+            <a class="nav-link-sub nav-text-sub" href="contact.html">Contacto</a>
         </li>
         <li class="menu-list-item nav-item-sub">
-            <a class="nav-link-sub nav-text-sub" href="faq.html">FAQ</a>
+            <a class="nav-link-sub nav-text-sub" href="faq.html">Preguntas más frecuentes</a>
         </li>
-        <li class="menu-list-item nav-item-sub">
+<!--         <li class="menu-list-item nav-item-sub">
             <a class="nav-link-sub nav-text-sub" href="404.html">404 page</a>
-        </li>
+        </li> -->
         <li class="menu-list-item nav-item-sub">
-            <a class="nav-link-sub nav-text-sub" href="login.html">Login</a>
+            <a class="nav-link-sub nav-text-sub" href="<?= base_url()?>">/login</a>
         </li>
         <li class="menu-list-item nav-item-sub">
             <a class="nav-link-sub nav-text-sub"
@@ -419,7 +371,7 @@
             href="wishlist.html">Wishlist</a>
         </li>
         <li class="menu-list-item nav-item-sub">
-            <a class="nav-link-sub nav-text-sub" href="cart.html">Cart</a>
+            <a class="nav-link-sub nav-text-sub" href="cart.html">Carro</a>
         </li>
         <li class="menu-list-item nav-item-sub">
             <a class="nav-link-sub nav-text-sub"
@@ -429,7 +381,7 @@
 </div>
 </li>
 <li class="menu-list-item nav-item">
-    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-link" href="contact.html">Contacto</a>
 </li>
 </ul>
 </nav>

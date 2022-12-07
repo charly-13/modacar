@@ -23,11 +23,11 @@
 		//Datos envio de correo
 	const NOMBRE_REMITENTE = "online shop";
 	const EMAIL_REMITENTE = "webmaster.ccc@hotmail.com";
-	const NOMBRE_EMPESA = "Moda - Car";
+	const NOMBRE_EMPESA = "MODA-CAR";
 	const WEB_EMPRESA = "www.charlys.com";
 
 	const CAT_SLIDER = "1,2,3";
-	const CAT_BANNER = "4,5,6";
+	const CAT_BANNER = "4,5,6,7,8";
 
 
 
